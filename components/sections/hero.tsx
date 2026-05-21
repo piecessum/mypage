@@ -28,13 +28,12 @@ export function Hero() {
           className="mb-8 overflow-hidden rounded-full border-2 border-neutral-200 dark:border-neutral-800"
         >
           <Image
-            src="/avatar.svg"
+            src="/avatar.jpg"
             alt="Алексей Масюта"
-            width={120}
-            height={120}
+            width={224}
+            height={224}
             className="h-28 w-28 object-cover"
             priority
-            unoptimized
           />
         </motion.div>
 
