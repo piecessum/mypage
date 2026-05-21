@@ -19,6 +19,7 @@ export function Hero() {
         className="-top-40 left-0 md:-top-20 md:left-60"
         fill="var(--accent)"
       />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-48 bg-gradient-to-b from-transparent to-background" />
 
       <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center px-6 pt-24 pb-16 text-center">
         <motion.div
