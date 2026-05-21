@@ -128,7 +128,7 @@ GROUP BY client_id;`}</pre>
 export function Skills() {
   return (
     <section id="skills" className="relative w-full py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-6xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -144,7 +144,7 @@ export function Skills() {
           </h2>
         </motion.div>
 
-        <BentoGrid className="md:auto-rows-[22rem]">
+        <BentoGrid className="md:auto-rows-[22rem] max-w-none mx-0">
           <BentoGridItem
             title="Бизнес-анализ"
             description={

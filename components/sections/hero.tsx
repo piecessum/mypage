@@ -20,7 +20,7 @@ export function Hero() {
         fill="var(--accent)"
       />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center px-6 pt-24 pb-16 text-center">
+      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-start px-6 pt-24 pb-16 text-left">
         <motion.div
           initial={{ opacity: 0, y: 20, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}

@@ -86,7 +86,7 @@ const data = [
 export function Experience() {
   return (
     <section id="experience" className="relative w-full py-12">
-      <div className="mx-auto max-w-7xl px-6 pt-12">
+      <div className="mx-auto max-w-6xl px-6 pt-12">
         <span className="text-sm font-mono uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
           // опыт работы
         </span>
