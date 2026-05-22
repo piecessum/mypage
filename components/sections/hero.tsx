@@ -26,14 +26,14 @@ export function Hero() {
           initial={{ opacity: 0, y: 20, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="mb-8 overflow-hidden rounded-full border-2 border-neutral-200 dark:border-neutral-800"
+          className="mb-8 rounded-full bg-white p-1 shadow-md ring-1 ring-black/10"
         >
           <Image
             src="/avatar.jpg"
             alt="Алексей Масюта"
             width={224}
             height={224}
-            className="h-28 w-28 object-cover"
+            className="h-28 w-28 rounded-full object-cover"
             priority
           />
         </motion.div>
