@@ -53,14 +53,6 @@ canvas {
   transition: none;
 }
 
-:root {
-  color-scheme: light;
-}
-
-.dark {
-  color-scheme: dark;
-}
-
 html {
   scroll-behavior: smooth;
 }
