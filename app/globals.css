@@ -35,24 +35,6 @@
   border-color: var(--border);
 }
 
-/* Плавная смена цветов при переключении темы.
-   Только цветовые свойства — трансформы motion не затрагиваем, чтобы не лагало. */
-@media (prefers-reduced-motion: no-preference) {
-  *:not(img):not(video):not(canvas),
-  *::before,
-  *::after {
-    transition: background-color 0.3s ease, border-color 0.3s ease,
-      color 0.3s ease, fill 0.3s ease;
-  }
-}
-
-/* Картинки не должны участвовать в цветовом переходе темы — иначе мигают */
-img,
-video,
-canvas {
-  transition: none;
-}
-
 /* На мобильных гасим все CSS-анимации и переходы — на телефоне они дёргаются.
    Motion-анимации (трансформы) глушит MotionProvider через reducedMotion. */
 @media (max-width: 767px) {
