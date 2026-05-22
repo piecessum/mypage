@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Mail, Phone, Send, MessageCircle, Copy, Check } from "lucide-react";
+import { Mail, Phone, Send, MessageCircle, Copy, Check, ArrowUpRight } from "lucide-react";
 import { useState } from "react";
+import { FRIENDS_URL } from "@/lib/site";
 
 const contacts = [
   {
@@ -130,10 +131,21 @@ export function Contact() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-16 border-t border-neutral-200 pt-8 text-center text-sm text-neutral-500 dark:border-neutral-800 dark:text-neutral-400"
+          className="mt-16 flex flex-col items-center gap-3 border-t border-neutral-200 pt-8 text-center text-sm text-neutral-500 dark:border-neutral-800 dark:text-neutral-400"
         >
-          © {new Date().getFullYear()} Алексей Масюта · Сделано на Next.js,
-          Aceternity UI и кофе
+          <a
+            href={FRIENDS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-neutral-600 transition hover:text-indigo-600 dark:text-neutral-400 dark:hover:text-indigo-400"
+          >
+            Мой личный сайт — заметки, пластинки, вишлист
+            <ArrowUpRight className="h-3.5 w-3.5" />
+          </a>
+          <span>
+            © {new Date().getFullYear()} Алексей Масюта · Сделано на Next.js,
+            Aceternity UI и кофе
+          </span>
         </motion.div>
       </div>
     </section>
