@@ -2,6 +2,7 @@
 
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
 import { motion } from "motion/react";
+import { useIsMobile } from "@/lib/use-is-mobile";
 import {
   IconChartBar,
   IconCode,
@@ -29,15 +30,20 @@ const Header = ({
 }: {
   variant: "analysis" | "design" | "docs" | "db" | "qa" | "bi";
 }) => {
+  const isMobile = useIsMobile();
   if (variant === "analysis") {
     return (
       <div className="relative flex h-32 w-full flex-1 overflow-hidden rounded-xl bg-gradient-to-br from-indigo-500/10 via-purple-500/10 to-transparent">
         <motion.div
           className="absolute inset-0"
-          animate={{
-            backgroundPosition: ["0% 0%", "100% 100%"],
-          }}
-          transition={{ duration: 10, repeat: Infinity, repeatType: "reverse" }}
+          animate={
+            isMobile ? undefined : { backgroundPosition: ["0% 0%", "100% 100%"] }
+          }
+          transition={
+            isMobile
+              ? undefined
+              : { duration: 10, repeat: Infinity, repeatType: "reverse" }
+          }
           style={{
             backgroundImage:
               "radial-gradient(circle at 20% 50%, rgba(99,102,241,0.3) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(168,85,247,0.3) 0%, transparent 50%)",
@@ -76,13 +82,11 @@ const Header = ({
         {[0, 1, 2].map((i) => (
           <motion.div
             key={i}
-            initial={{ width: "0%" }}
-            animate={{ width: ["0%", "70%", "70%"] }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              delay: i * 0.3,
-            }}
+            initial={isMobile ? false : { width: "0%" }}
+            animate={isMobile ? { width: "70%" } : { width: ["0%", "70%", "70%"] }}
+            transition={
+              isMobile ? undefined : { duration: 3, repeat: Infinity, delay: i * 0.3 }
+            }
             className="h-2 rounded bg-emerald-500/40"
           />
         ))}
@@ -115,9 +119,19 @@ GROUP BY client_id;`}</pre>
       {[40, 70, 50, 90, 60, 80].map((h, i) => (
         <motion.div
           key={i}
-          initial={{ height: 0 }}
+          initial={isMobile ? false : { height: 0 }}
           animate={{ height: `${h}%` }}
-          transition={{ duration: 1, delay: i * 0.1, repeat: Infinity, repeatType: "reverse", repeatDelay: 2 }}
+          transition={
+            isMobile
+              ? undefined
+              : {
+                  duration: 1,
+                  delay: i * 0.1,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  repeatDelay: 2,
+                }
+          }
           className="flex-1 rounded-t bg-sky-500/50"
         />
       ))}
